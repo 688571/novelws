@@ -1,0 +1,7 @@
+# This crawler uses pre-vendored dependencies located in the './vendor' directory. 
+# They are automatically added to the Python path at runtime.
+# Running pip install is optional.
+
+beautifulsoup4>=4.9.0
+lxml>=4.6.0
+chardet>=4.0.0

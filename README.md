@@ -1,11 +1,81 @@
-<div align="center">
+# 📖 智能小说工作台 & 深度排版阅读系统 (Novel Workbench & Smart Reader)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+一个基于 **React + TypeScript + Tailwind CSS + Node.js (Express) + MySQL/SQLite** 构建的高性能全栈小说检索、抓取、智能排版、多用户管理与护眼阅读系统。
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🌟 核心功能特性
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 1. 🔍 多源智能小说检索与抓取
+- **多通道智能检索**：内置多个高速小说检索通道（通道 1：秒下高速，通道 2：完整全本，及其他书源通道）。
+- **极速秒下与智能排版**：支持一键秒下入库并自动进行格式化清洗。
+- **通道四极速轻量抓取**：通道四采用优雅的实时进度条弹窗抓取，过程流畅且不暴露任何底层网址信息，保障数据源安全。
 
-</div>
+### 2. 🤖 AI 智能优化与清洗
+- **大模型双轨制**：
+  - **用户自定义 AI**：可在【AI 助手】中配置任意 OpenAI 兼容的 API Key、API URL 及模型名称（如 GPT-4o-mini、DeepSeek、Kimi 等），享受完全自主的 AI 增强服务。
+  - **服务器共享大模型**：未配置个人 Key 的用户可通过打赏机制解锁服务器共享大模型权限。
+- **精细化广告清洗**：严格仅删除包含垃圾广告、恶意网址的行，完整保留所有正文内容和文学章节。
+- **分章节阅读器适配**：自动规范章节标题并重组分页分隔符，完美适配全功能分章节阅读器。
+- **自动优化偏好**：支持在用户设置中勾选“默认下载入库后自动使用 AI 优化一次”。
+
+### 3. 👥 多用户协同与安全管理
+- **账号审核机制**：新注册用户默认处于 **“待审核 (pending)”** 状态，需超级管理员在后台一键“通过审核”后方可正常登录使用。
+- **单设备绑定防护**：普通会员采用单设备登录绑定策略，防止账号外借；支持管理员一键解绑以允许会员更换设备。
+- **超级管理员控制台**：支持会员状态管理（正常、禁用、待审核）、密码重置、设备解绑以及账号删除。
+
+### 4. 🎨 全局多主题美化风格
+- **6 大精致主题无缝联动**：支持晨曦蓝调、古典宣纸、青竹墨韵、深邃暗夜、暮紫流金、落霞珊瑚。
+- **阅读界面高度同步**：阅读界面的背景色、排版与正文文字颜色完美服从抓取工作台选择的全局主题，全站视觉高度统一。
+
+---
+
+## 🚀 部署与运行指南
+
+本系统支持前端静态托管或前后端一体化部署（推荐 Node.js 全栈运行）。
+
+### 环境变量配置 (`.env`)
+在项目根目录下创建 `.env` 文件（可参考 `.env.example`）：
+```env
+PORT=3000
+NODE_ENV=production
+
+# 数据库配置 (若使用 MySQL，请配置以下连接信息；若不配置将自动启用本地持久化 JSON/SQLite 兼容引擎)
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=novel_workbench
+
+# 服务器端共享 AI 配置 (可选)
+AI_API_KEY=your_ai_api_key
+AI_API_URL=https://api.openai.com/v1
+AI_MODEL=gpt-4o-mini
+```
+
+### 1. 安装依赖
+确保已安装 Node.js (推荐 v18+) 与 Python 3（用于后端爬虫包装器），然后执行：
+```bash
+npm install
+```
+
+### 2. 开发环境运行
+```bash
+npm run dev
+```
+开发服务器将启动在 `http://localhost:3000`（支持 Vite HMR 热更新中间件）。
+
+### 3. 生产环境构建与启动
+```bash
+# 构建前端静态文件
+npm run build
+
+# 启动生产全栈服务器
+npm start
+```
+
+---
+
+## 🔒 默认管理员账号
+- **用户名**: `admin`
+- **初始密码**: `123456`
+*(登录后可在后台进行会员审核、设备解绑及系统管理)*

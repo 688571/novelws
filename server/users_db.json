@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "$2b$10$t41IeJ..vtQgdSqdUnPQGuztOYeTndqdqDW17O8Wk9OpWgcO8QdOy",
+      "nickname": "管理员",
+      "created_at": "2026-10-16T15:42:18.355Z",
+      "role": "admin",
+      "status": "active",
+      "bound_device_id": null,
+      "device_reset_requested": 0
+    },
+    {
+      "id": 2,
+      "username": "reader1",
+      "password": "$2b$10$t41IeJ..vtQgdSqdUnPQGuztOYeTndqdqDW17O8Wk9OpWgcO8QdOy",
+      "nickname": "书友小陈",
+      "created_at": "2026-10-16T15:42:18.355Z",
+      "role": "user",
+      "status": "active",
+      "bound_device_id": "dev_B",
+      "device_reset_requested": 0,
+      "device_info": "Laptop B",
+      "device_bound_at": "2026-10-17T00:25:28.497Z"
+    },
+    {
+      "id": 3,
+      "username": "testuser",
+      "password": "$2b$10$9i71KdeLWlf7U32hm2xAzurrt7bNU9Jtp3UG4fQZQDQRhhV9K.FC2",
+      "nickname": "测试书友",
+      "created_at": "2026-10-16T15:42:30.860Z",
+      "role": "user",
+      "status": "active",
+      "bound_device_id": null,
+      "device_reset_requested": 0
+    }
+  ],
+  "user_novels": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "novel_filename": "奢侈.txt",
+      "custom_name": "奢侈",
+      "is_favorite": 0,
+      "created_at": "2026-10-16T15:42:18.364Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "novel_filename": "潮湿禁区.txt",
+      "custom_name": "潮湿禁区",
+      "is_favorite": 0,
+      "created_at": "2026-10-16T15:42:18.364Z"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "novel_filename": "奢侈.txt",
+      "custom_name": null,
+      "is_favorite": 0,
+      "created_at": "2026-10-16T15:42:45.960Z"
+    }
+  ],
+  "nextUserId": 4,
+  "nextUserNovelId": 4
+}
